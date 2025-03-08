@@ -10,49 +10,49 @@ The dataset is provided in a .sql file and contains various details about each a
 
 ## 🔍 Key Data Fields
 
-Location & Time: State, city, land use type, road classification, specific mile point, and timestamp.
+- Location & Time: State, city, land use type, road classification, specific mile point, and timestamp.
 
-Crash Details: Type of collision, intersection type, lighting conditions, weather conditions.
+- Crash Details: Type of collision, intersection type, lighting conditions, weather conditions.
 
-Casualties & Injury Data: Number of fatalities and involvement of drunk drivers.
+- Casualties & Injury Data: Number of fatalities and involvement of drunk drivers.
 
-Vehicle Information: Total vehicles involved, motor vehicles in transport, parked or working vehicles.
+- Vehicle Information: Total vehicles involved, motor vehicles in transport, parked or working vehicles.
 
-People Involved: Occupants and non-occupants (e.g., pedestrians, cyclists).
+- People Involved: Occupants and non-occupants (e.g., pedestrians, cyclists).
 
-Unique Identifier: Consecutive record number.
+- Unique Identifier: Consecutive record number.
 
-🛠️ Data Processing
+## 🛠️ Data Processing
 
-Cleaning: Used PostgreSQL to remove inconsistencies such as "unknown" values in land_use_name and "not reported" in manner_of_collision_name.
+- Cleaning: Used PostgreSQL to remove inconsistencies such as "unknown" values in land_use_name and "not reported" in manner_of_collision_name.
 
-Time Zone Handling: Created a separate table to standardize time zones across different U.S. regions.
+- Time Zone Handling: Created a separate table to standardize time zones across different U.S. regions.
 
-📈 Exploratory Data Analysis (EDA)
+## 📈 Exploratory Data Analysis (EDA)
 
 We performed an in-depth analysis to identify key trends:
 
-Conditions Increasing Accident Risk – Examined intersection type, lighting conditions, and weather.
+- Conditions Increasing Accident Risk – Examined intersection type, lighting conditions, and weather.
 
-Top 10 States with the Most Accidents – Identified high-risk states.
+- Top 10 States with the Most Accidents – Identified high-risk states.
 
-Hourly Crash Patterns – Analyzed crash frequency by hour.
+- Hourly Crash Patterns – Analyzed crash frequency by hour.
 
-Drunk Driving Impact – Measured percentage of accidents caused by impaired driving.
+- Drunk Driving Impact – Measured percentage of accidents caused by impaired driving.
 
-Urban vs. Rural Accidents – Compared crash occurrences in different land use types.
+- Urban vs. Rural Accidents – Compared crash occurrences in different land use types.
 
-Daily Accident Trends – Determined the most accident-prone days.
+- Daily Accident Trends – Determined the most accident-prone days.
 
-📊 Key Findings
+## 📊 Key Findings
 
-Accidents are most frequent during the day (especially between 10:00 AM - 4:00 PM), highlighting the need for better signage, road markings, and speed regulation.
+- Accidents are most frequent during the day (especially between 10:00 AM - 4:00 PM), highlighting the need for better signage, road markings, and speed regulation.
 
-Top 3 states with the highest accidents: Texas, California, and Florida.
+- Top 3 states with the highest accidents: Texas, California, and Florida.
 
-Drunk driving is a significant factor – Stricter enforcement and public awareness campaigns are needed.
+- Drunk driving is a significant factor – Stricter enforcement and public awareness campaigns are needed.
 
-Accidents peak on Sundays at 5:00 PM (average 7.78 accidents), suggesting a need for traffic regulation adjustments during weekends and holidays.
+- Accidents peak on Sundays at 5:00 PM (average 7.78 accidents), suggesting a need for traffic regulation adjustments during weekends and holidays.
 
 ## 🚦 Recommendations
 
