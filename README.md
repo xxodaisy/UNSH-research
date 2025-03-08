@@ -57,9 +57,13 @@ We performed an in-depth analysis to identify key trends:
 ## 🚦 Recommendations
 
 ✔️ Enhance Traffic Signs & Road Markings – Improve visibility in both day and night conditions.
+
 ✔️ Stricter Law Enforcement – Increase traffic patrols, especially in high-risk states and accident-prone hours.
+
 ✔️ Regulate Weekend & Holiday Traffic – Implement open-close road systems or speed control policies.
+
 ✔️ Strengthen Drunk Driving Regulations – Conduct stricter roadside checks and increase penalties.
+
 ✔️ Improve Urban Driving Policies – Adapt road safety measures for high-traffic areas.
 
 ## 📌 Conclusion
