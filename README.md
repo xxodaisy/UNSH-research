@@ -1,110 +1,69 @@
-# **United States National Highway Research**
+# United States National Highway Research
 
-Analysis of National Highway Traffic Safety Administration in the United States based on group project on our bootcamp
+## 📌 Overview
 
-## **Background**
+This project analyzes highway accident data collected by the National Highway Traffic Safety Administration (NHTSA) for the year 2021. The goal is to identify patterns, risk factors, and potential improvements to enhance road safety in the United States.
 
-National Highway Traffic Safety Administration (NTHSA) is a Goverment department that focused on reducing highway accidents in the United States. NTHSA is currently on reducing the number of traffic accidents on higways.
+## 📊 Data Collection
 
-We are one of the representatives of the company that was asked to analyze the data collected during 2021. This data is completed about accidents that occured during 2021
+The dataset is provided in a .sql file and contains various details about each accident, including location, crash conditions, casualties, vehicle involvement, and people affected.
 
-## **Data Collections**
+## 🔍 Key Data Fields
 
-The dataset I got in a .sql file
+Location & Time: State, city, land use type, road classification, specific mile point, and timestamp.
 
-- Location & Time Identification
-  - state_name: Name of the state where the crash occured
-  - city_name: Name of city where the crash occured
-  - land_use_name: Type of land use (e.g., urban area, rural area)
-  - functional_system_name: Road type or classification (e.g., highway, arterial      road).
-  - milepoint: specific mile point on the road where the crash happened
-  - timestamp_of_crash: date and time of the crash
+Crash Details: Type of collision, intersection type, lighting conditions, weather conditions.
 
-- Crash Details
-  - manner_of_collision_name: Type of collision (e.g., head-on, side-impact)
-  - type_of_intersection_name: Type of intersection at the crash (e.g., daylight,     dark-not lighted, dark-lighted, dusk)
-  - atmospheric_conditions_1_name: weather conditions at the time of the crash        (e.g., clear, rain, cloudy, not reported)
-    
-- Casualties and Injury Data 
-  - number_of_fatalities: Number of fatalities resulting from the crash
-  - number_of_drunk_drivers: Number of drivers under the influence of alcohol         involved in the crash
+Casualties & Injury Data: Number of fatalities and involvement of drunk drivers.
 
-- Vehicle Information
-  - number_of_vehicle_forms_submitted_all: Total number of vehicle forms 
-    submitted for all vehicle involved
-  - number_of_motor_vehicle_in_transport_mvit: Number of motor vehicle in             transport (MVIT) involved in the crash
-  - number_of_parked_working_vehicles: Number of parked or working vehicles           involved at the crash site
+Vehicle Information: Total vehicles involved, motor vehicles in transport, parked or working vehicles.
 
-- People Involved (Occupants & Non-Occupants)
-  - number_of_forms_submitted_for_persons_not_in_motor_vehicles: Number of people     submitted for non-motor vehicle occupants involved
-  - number_of_persons_in_motor_vehicle_in_transport_mvit: Number of people inside     motor vehicle involved in the crash
-  - numer_of_persons_not_in_motor_vehicle_in_transport_mvit: Number of people         involved who were not inside motor vehicle (e.g., pedestrians, cyclists)
+People Involved: Occupants and non-occupants (e.g., pedestrians, cyclists).
 
-- Unique Identification:
-  - consecutive_number: Unique identifier for each crash record
+Unique Identifier: Consecutive record number.
 
-## **Data Inspection**
+🛠️ Data Processing
 
-In this process, we cleaned the data using SQL (PostgreSQL). There are several columns that we cleaned, such as the 'unknow' part in the land_use_name column and not reported in the manner_of_collison_name column. 
-These columns were removed because they had a small amount of null data, so we decided to clean the data.
+Cleaning: Used PostgreSQL to remove inconsistencies such as "unknown" values in land_use_name and "not reported" in manner_of_collision_name.
 
-## **Exploratory Data Analysis (EDA)**
-Exploratory Data Analysis with SQL and Spreadsheet for Data Visualization
+Time Zone Handling: Created a separate table to standardize time zones across different U.S. regions.
 
-Before we go to the EDA, another thing to note is the **timestamp_of_crash** column. In this column, we're see a lot of different timezones in different regions of the United States. 
+📈 Exploratory Data Analysis (EDA)
 
-Therefore, we created a new table for timezone so that the data for each state can be clearly distinguished. 
+We performed an in-depth analysis to identify key trends:
 
-After the new table was created, we brainstormed teh data and found seeral things that needed to be analyzed. The things we analyzed were as follows:
+Conditions Increasing Accident Risk – Examined intersection type, lighting conditions, and weather.
 
-1. Conditions that increase the risk of accidents
-2. Top 10 states where the most accidents occur
-3. Average number of crashes per day by hour of crash occurence
-4. Percentage of crashes caused by drunk drivers
-5. Percentage of crashes in rural and urban areas
-6. Number of accidents by day
+Top 10 States with the Most Accidents – Identified high-risk states.
 
-### **Conditions that increaces the risk of accidents**
-![image](https://github.com/user-attachments/assets/21f41b73-9ade-42f3-81de-63c83db6328f)
+Hourly Crash Patterns – Analyzed crash frequency by hour.
 
-From sum the risk of accidents by type_of_intersection_name, light_condition_name and atmospheric_condition_1_name 
+Drunk Driving Impact – Measured percentage of accidents caused by impaired driving.
 
-### **Top 10 states where the most accidents occur**
-![image](https://github.com/user-attachments/assets/436ef993-1e2a-440b-a9e7-3168fb0a97db)
+Urban vs. Rural Accidents – Compared crash occurrences in different land use types.
 
-From sum of the state where the most accidents occur, **order by state** and limit 10
+Daily Accident Trends – Determined the most accident-prone days.
 
-### **Average number of crashes per day by hour of crash occurence**
+📊 Key Findings
 
-![image](https://github.com/user-attachments/assets/f51fba91-2cfd-4737-8812-ddec3738993b)
+Accidents are most frequent during the day (especially between 10:00 AM - 4:00 PM), highlighting the need for better signage, road markings, and speed regulation.
 
-Average of total accidents per day by hour (24H)
+Top 3 states with the highest accidents: Texas, California, and Florida.
 
-### **Percentage of crashes caused by drunk drivers**
+Drunk driving is a significant factor – Stricter enforcement and public awareness campaigns are needed.
 
-![image](https://github.com/user-attachments/assets/20a4219c-5c57-4bab-bfff-67ae8507c495)
+Accidents peak on Sundays at 5:00 PM (average 7.78 accidents), suggesting a need for traffic regulation adjustments during weekends and holidays.
 
-Percentage of crashes caused by drunk drivers and not caused by drunk drivers
+## 🚦 Recommendations
 
-### **Percentage of crashes in rural and urban areas**
+✔️ Enhance Traffic Signs & Road Markings – Improve visibility in both day and night conditions.
+✔️ Stricter Law Enforcement – Increase traffic patrols, especially in high-risk states and accident-prone hours.
+✔️ Regulate Weekend & Holiday Traffic – Implement open-close road systems or speed control policies.
+✔️ Strengthen Drunk Driving Regulations – Conduct stricter roadside checks and increase penalties.
+✔️ Improve Urban Driving Policies – Adapt road safety measures for high-traffic areas.
 
-![image](https://github.com/user-attachments/assets/0aae5343-cf2e-4530-9c53-1137558f8565)
+## 📌 Conclusion
 
-Percentage of crashes in rural and urban areas
+By implementing these measures, we can significantly reduce highway accidents and create a safer road environment for all users.
 
-### **Number of accidents by day**
-
-![image](https://github.com/user-attachments/assets/5ea4b1aa-737c-42b4-9b61-b11e82881b48)
-
-from the sum of accident risk by day
-
-## **Conclusion**
-1. Data shows that accidents occur most often during the day, so we need to make traffic signs that can be seen both during the day and at night. In addition, we also need to make road markings and speed bumps so that they can be applied to drivers to increase their vigilance in driving.
-   
-2. We need to make new regulations on traffic procedures such as strengthening road rules, especially in the top 3 states with the most accidents, namely Texas, California, and Florida, regulating driving speed, forming policies related to the prohibition of distracted driving. Distracted driving can be caused by texting, eating and drinking, and even drunk driving.
-
-3. Need to increase the number of police personnel and traffic officers at times of frequent accidents starting from 10.00 to 16.00 with the number of cases above 5.
-
-4. We need to make new regulations on driving requirements, especially in urban areas, check and prohibit if found drunk drivers to continue driving on the road.
-
-5. The data shows that accidents occur most often on Sundays at 17.00 with an average number of accidents of 7.78 so we need to make new regulations regarding traffic rules (especially on Saturdays and Sundays) such as making an open and close road system at certain hours and days (seen from the conduciveness of the road), for example during school holidays, thanksgiving day, religious holidays, labor days, and others.
+📍 This analysis is part of a group project conducted during our bootcamp.
